@@ -15,13 +15,13 @@ function Graph() {
     //console.log(Object.values(count1[0]))
     //console.log(i)
     function generateDataPoints() {
-        axios.get("http://localhost:3001/getCountPoint1").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/getCountPoint1").then((response) =>{
             setCount1(response.data)
         })
-        axios.get("http://localhost:3001/getCountPoint2").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/getCountPoint2").then((response) =>{
             setCount2(response.data)
         })
-        axios.get("http://localhost:3001/getCountPoint3").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/getCountPoint3").then((response) =>{
             setCount3(response.data)
         })
         let one = parseInt(Object.values(count1[0] || {}).toString())

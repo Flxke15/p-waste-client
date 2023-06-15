@@ -18,7 +18,7 @@ function AddUser(){
     const [pointList,setPointList] = useState([]);
 
     const addpoint = () => {
-        axios.post('http://localhost:3001/addPoint', {
+        axios.post('https://eager-bass-ring.cyclic.app/addPoint', {
             point : point,
             name : name,
             address : address,

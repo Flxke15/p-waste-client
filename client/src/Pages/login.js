@@ -17,7 +17,7 @@ function Login() {
     axios.defaults.withCredentials = true;
 
     const login = () => {
-        axios.post("http://localhost:3001/login", {
+        axios.post("https://eager-bass-ring.cyclic.app/login", {
             username : username,
             password : password,
         }).then((response) => {
@@ -42,7 +42,7 @@ function Login() {
     };
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/login").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/login").then((response) => {
             if(response.data.loggedIn == true){
                 setLoginStatus(response.data.user[0].username)
             }

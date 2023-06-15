@@ -12,20 +12,20 @@ function Point(){
     const [status,setStatus] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/getLastHistory").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/getLastHistory").then((response) => {
             setLastHistory(response.data);
         }).then((response)=>{
             lastHistory.map((valhis,key)=>{
-                axios.get(`http://localhost:3001/checkRole/${valhis.UID}`).then((response) => {
+                axios.get(`https://eager-bass-ring.cyclic.app/checkRole/${valhis.UID}`).then((response) => {
                     setRoleUID(response.data);
                 }).then((response)=>{
                     roleUID.map((val,key)=>{
                         if (val.Role === 'C'){
-                            axios.put(`http://localhost:3001/updateStatusC/${valhis.Point}`).then((response) => {
+                            axios.put(`https://eager-bass-ring.cyclic.app/updateStatusC/${valhis.Point}`).then((response) => {
                                 setStatus(response.data);
                             })
                         }else if (val.Role === 'U'){
-                            axios.put(`http://localhost:3001/updateStatusU/${valhis.Point}`).then((response) => {
+                            axios.put(`https://eager-bass-ring.cyclic.app/updateStatusU/${valhis.Point}`).then((response) => {
                                 setStatus(response.data);
                             })
                         }
@@ -37,7 +37,7 @@ function Point(){
 
 
     const showPoint = () =>{
-        axios.get("http://localhost:3001/showPoint").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/showPoint").then((response) =>{
             setPointList(response.data)
         })
     }
@@ -52,7 +52,7 @@ function Point(){
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3001/deletePoint/${id}`).then((response) => {
+                axios.delete(`https://eager-bass-ring.cyclic.app/deletePoint/${id}`).then((response) => {
                     setPointList(
                         pointlist.filter((val) => {
                             return val.id != id;

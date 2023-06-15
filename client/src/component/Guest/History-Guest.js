@@ -22,7 +22,7 @@ function HistoryGuest(){
 
 
     const showHistory = () =>{
-        axios.get("http://localhost:3001/showHistory").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/showHistory").then((response) =>{
             setHistoryList(response.data)
         })
     }

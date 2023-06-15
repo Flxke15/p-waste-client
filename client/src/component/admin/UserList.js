@@ -8,7 +8,7 @@ function UserList(){
     const navigate = useNavigate();
     const [userList,setUserList] = useState([]);
     const showUsers = () => {
-        axios.get("http://localhost:3001/showUser").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/showUser").then((response) => {
             setUserList(response.data);
         })
     }
@@ -22,10 +22,10 @@ function UserList(){
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3001/deleteUIDFromUser/${uid}`).then((response)=>{
+                axios.delete(`https://eager-bass-ring.cyclic.app/deleteUIDFromUser/${uid}`).then((response)=>{
                     window.location.reload(false);
                 })
-                    axios.delete(`http://localhost:3001/deleteUser/${id}`).then((response) => {
+                    axios.delete(`https://eager-bass-ring.cyclic.app/deleteUser/${id}`).then((response) => {
                     setUserList(
                         userList.filter((val) => {
                             return val.id != id;

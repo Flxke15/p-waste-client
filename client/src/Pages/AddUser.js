@@ -26,13 +26,13 @@ function AddUser(){
     const [disabled, setDisabled] = useState(false);
 
     useEffect(() =>{
-        axios.get("http://localhost:3001/getAllUID").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/getAllUID").then((response) => {
             setGetAllUID(response.data);
         })
     },[])
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/getAllUID").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/getAllUID").then((response) => {
             setLengthUID(response.data);
         })
         if (getalluid.length < lengthUID.length){
@@ -41,7 +41,7 @@ function AddUser(){
     },[lengthUID,state])
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/getUID").then((response) => {
+        axios.get("https://eager-bass-ring.cyclic.app/getUID").then((response) => {
             setGetUID(response.data);
         })
         getuid.map((val,key)=>{
@@ -80,7 +80,7 @@ function AddUser(){
                 title : 'กรุณากรอกข้อมูลให้ครบ'
             })
         }else {
-            axios.post('http://localhost:3001/adduser', {
+            axios.post('https://eager-bass-ring.cyclic.app/adduser', {
                 surname : surname,
                 lastname : lastname,
                 uid : uid,
@@ -111,7 +111,7 @@ function AddUser(){
         if (getalluid.length === lengthUID.length){
             navigate('/mainAdmin');
         }else {
-            axios.delete('http://localhost:3001/deleteUID')
+            axios.delete('https://eager-bass-ring.cyclic.app/deleteUID')
             navigate('/mainAdmin');
         }
     }

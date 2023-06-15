@@ -37,7 +37,7 @@ function PointOther(){
 
 
     const showPoint = () =>{
-        axios.get("http://localhost:3001/showPoint").then((response) =>{
+        axios.get("https://eager-bass-ring.cyclic.app/showPoint").then((response) =>{
             setPointList(response.data)
         })
     }
